@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Cave des Canuts — Caviste à Lyon</title>
+<style>
+:root{--wine:#511f2d;--wine2:#88404a;--cream:#f8f3e9;--sand:#efe5d7;--ink:#351b20;--muted:#806b60;--line:#dfd0bf}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,"Times New Roman",serif}a{color:inherit;text-decoration:none}.topbar{background:var(--wine);color:#fff6e9;text-align:center;padding:9px 12px;font:12px Arial,sans-serif;letter-spacing:.04em}.wrap{width:min(1180px,100% - 44px);margin:auto}header{border-bottom:1px solid #e6d9c9;padding:20px 0}.head{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:bold;font-size:23px;letter-spacing:-.03em}.tag{font:10px Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:6px}.nav{display:flex;gap:26px;font:14px Arial,sans-serif}.nav a:hover,.textlink:hover{text-decoration:underline}.cart{border:1px solid #d6c6b5;border-radius:99px;padding:10px 16px;background:transparent;color:var(--ink);cursor:pointer}.mobile-nav{display:none}.hero{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;padding:62px 0}.eyebrow{font:11px Arial,sans-serif;text-transform:uppercase;letter-spacing:.2em;color:#8d594e;margin-bottom:17px}.hero h1{font-size:clamp(40px,5vw,64px);line-height:1.08;font-weight:normal;margin:0 0 22px}.hero h1 em{color:var(--wine2)}.intro{font:16px/1.8 Arial,sans-serif;color:#69544b;max-width:520px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}.btn{display:inline-block;padding:14px 20px;font:13px Arial,sans-serif;border:1px solid #bda99a}.btn.primary{background:var(--wine);color:#fff7ed;border-color:var(--wine)}.hero-img{position:relative}.hero-img img{width:100%;height:390px;object-fit:cover;display:block}.stamp{position:absolute;bottom:16px;left:16px;background:#f8f3e9f2;padding:13px 17px}.stamp small{display:block;font:10px Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:#805b4f}.stamp span{display:block;font-style:italic;font-size:18px;margin-top:5px}.section{padding:62px 0}.sand{background:var(--sand)}h2{font-weight:normal;font-size:clamp(30px,4vw,42px);margin:0 0 30px}.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.category img{width:100%;height:190px;object-fit:cover;display:block;margin-bottom:13px}.category h3{font-weight:normal;font-size:21px;margin:0 0 7px}.category p{font:13px Arial,sans-serif;color:var(--muted);margin:0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:30px}.section-head h2{margin:0}.subtle{font:13px Arial,sans-serif;color:var(--muted)}.products{display:grid;grid-template-columns:repeat(3,1fr);gap:38px 24px}.product-image{position:relative;background:var(--sand);margin-bottom:14px}.product-image img{display:block;width:100%;height:250px;object-fit:cover}.pill{position:absolute;top:12px;left:12px;background:var(--cream);color:var(--wine);padding:7px 9px;font:10px Arial,sans-serif;text-transform:uppercase;letter-spacing:.07em}.origin{font:10px Arial,sans-serif;text-transform:uppercase;letter-spacing:.15em;color:#8d594e}.product h3{font-weight:normal;font-size:21px;margin:9px 0}.desc{font:13px/1.6 Arial,sans-serif;color:var(--muted);min-height:40px}.buyrow{display:flex;justify-content:space-between;align-items:center;margin-top:14px}.price{font-size:20px;font-weight:bold}.add{border:1px solid #a9897c;border-radius:50%;width:38px;height:38px;font-size:23px;background:transparent;color:var(--wine);cursor:pointer}.add:hover{background:var(--wine);color:white}.note{font:11px Arial,sans-serif;color:var(--muted);margin-top:24px}.benefits{background:var(--wine);color:#fff5e9}.benefits .eyebrow{color:#d8b9a5}.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}.benefit-icon{font-size:29px;margin-bottom:13px}.benefit-grid h3{font-size:22px;font-weight:normal;margin:0 0 12px}.benefit-grid p{font:14px/1.8 Arial,sans-serif;color:#ead8ca;margin:0}.contact{text-align:center;padding:60px 0}.contact p{font:15px/1.7 Arial,sans-serif;color:var(--muted);max-width:560px;margin:0 auto 24px}footer{background:#eee5d9;border-top:1px solid var(--line);padding:38px 0 22px}.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;font:13px/1.9 Arial,sans-serif;color:#69544b}.footer-grid strong{color:var(--ink)}.footer-brand{font:bold 18px Georgia,serif;color:var(--ink)}.copyright{border-top:1px solid #d9c9b8;margin-top:26px;padding-top:18px;font:11px Arial,sans-serif;color:var(--muted)}#cart-message{font:13px Arial,sans-serif;background:white;border:1px solid var(--line);padding:12px;margin-top:12px;display:none}.legal{font-size:11px;color:var(--muted);margin-top:8px}
+@media(max-width:760px){.wrap{width:calc(100% - 36px)}.nav{display:none}.mobile-nav{display:flex;gap:22px;overflow:auto;padding-top:18px;font:13px Arial,sans-serif;white-space:nowrap}.brand{font-size:19px}.tag{font-size:9px}.hero{grid-template-columns:1fr;gap:25px;padding:36px 0 44px}.hero-img{grid-row:1}.hero-img img{height:280px}.hero-copy{grid-row:2}.hero h1{font-size:43px}.intro{font-size:15px}.section{padding:43px 0}.categories{grid-template-columns:repeat(2,1fr);gap:25px 14px}.category img{height:150px}.category h3{font-size:19px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 14px}.product-image img{height:185px}.product h3{font-size:18px}.desc{font-size:12px}.price{font-size:17px}.section-head{align-items:start;flex-direction:column;gap:8px}.benefit-grid{grid-template-columns:1fr;gap:28px}.contact{padding:45px 0}.footer-grid{grid-template-columns:1fr;gap:20px}}
+</style>
+</head>
+<body>
+<div class="topbar">Livraison partout en France · Le plaisir du vin, bien choisi</div>
+<header><div class="wrap">
+ <div class="head">
+  <a href="#" aria-label="Accueil La Cave des Canuts"><div class="brand">LA CAVE DES CANUTS</div><div class="tag">Caviste indépendant · Lyon</div></a>
+  <nav class="nav"><a href="#categories">Nos vins</a><a href="#selection">La sélection</a><a href="#engagements">Nos engagements</a></nav>
+  <button class="cart" id="cart-button">Panier (<span id="cart-count">0</span>)</button>
+ </div>
+ <div id="cart-message" role="status">Ton panier est prêt à accueillir tes découvertes.</div>
+ <nav class="mobile-nav"><a href="#categories">Nos vins</a><a href="#selection">La sélection</a><a href="#engagements">Nos engagements</a></nav>
+</div></header>
+<main>
+<section class="wrap hero">
+ <div class="hero-copy"><div class="eyebrow">Le goût des belles découvertes</div><h1>De belles bouteilles.<br><em>De belles histoires.</em></h1><p class="intro">Des vignerons passionnés, des terroirs de caractère et des vins choisis avec soin. Retrouvez l’esprit de notre cave lyonnaise, directement chez vous.</p><div class="actions"><a class="btn primary" href="#selection">Découvrir nos vins ↗</a><a class="btn" href="#engagements">Notre philosophie</a></div><p class="subtle" style="margin-top:25px">✳ Des bouteilles sélectionnées avec conviction, jamais au hasard.</p></div>
+ <div class="hero-img"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1100&q=85" alt="Bouteilles de vin dans une cave chaleureuse"><div class="stamp"><small>Notre promesse</small><span>Le bon vin, au bon moment.</span></div></div>
+</section>
+<section class="section sand" id="categories"><div class="wrap"><div class="eyebrow">À chacun son plaisir</div><h2>Explorez nos univers</h2><div class="categories">
+<a class="category" href="#selection"><img src="https://images.unsplash.com/photo-1516594798947-e65505dbb29d?auto=format&fit=crop&w=600&q=80" alt="Vin rouge"><h3>Vins rouges</h3><p>Du fruit au caractère ↗</p></a>
+<a class="category" href="#selection"><img src="https://images.unsplash.com/photo-1474722883778-792e7990302f?auto=format&fit=crop&w=600&q=80" alt="Vin blanc"><h3>Vins blancs</h3><p>Fraîcheur et finesse ↗</p></a>
+<a class="category" href="#selection"><img src="https://images.unsplash.com/photo-1558001373-7b93ee48ffa0?auto=format&fit=crop&w=600&q=80" alt="Vin rosé"><h3>Vins rosés</h3><p>La convivialité en bouteille ↗</p></a>
+<a class="category" href="#selection"><img src="https://images.unsplash.com/photo-1594149433275-5d4c15d1e0a8?auto=format&fit=crop&w=600&q=80" alt="Vin pétillant"><h3>Bulles & fêtes</h3><p>Pour les beaux moments ↗</p></a>
+</div></div></section>
+<section class="section wrap" id="selection"><div class="section-head"><div><div class="eyebrow">Nos coups de cœur</div><h2>La sélection du caviste</h2></div><span class="subtle">6 bouteilles à découvrir</span></div><div class="products">
+<article class="product"><div class="product-image"><img src="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=600&q=80" alt="Bouteille de vin rouge"><span class="pill">Coup de cœur</span></div><div class="origin">Vallée du Rhône · Rouge</div><h3>Les Terres de caractère</h3><div class="desc">Épicé, généreux, idéal à table.</div><div class="buyrow"><span class="price">14,90 €</span><button class="add" data-name="Les Terres de caractère" aria-label="Ajouter Les Terres de caractère au panier">+</button></div></article>
+<article class="product"><div class="product-image"><img src="https://images.unsplash.com/photo-1474722883778-792e7990302f?auto=format&fit=crop&w=600&q=80" alt="Vin blanc de terroir"></div><div class="origin">Bourgogne · Blanc</div><h3>L’Éclat du terroir</h3><div class="desc">Vif et délicat, aux notes florales.</div><div class="buyrow"><span class="price">18,50 €</span><button class="add" data-name="L’Éclat du terroir" aria-label="Ajouter L’Éclat du terroir au panier">+</button></div></article>
+<article class="product"><div class="product-image"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80" alt="Bouteilles de vin"></div><div class="origin">Loire · Rouge</div><h3>Le Petit Vigneron</h3><div class="desc">Souple et fruité, pour tous les jours.</div><div class="buyrow"><span class="price">11,90 €</span><button class="add" data-name="Le Petit Vigneron" aria-label="Ajouter Le Petit Vigneron au panier">+</button></div></article>
+<article class="product"><div class="product-image"><img src="https://images.unsplash.com/photo-1558001373-7b93ee48ffa0?auto=format&fit=crop&w=600&q=80" alt="Vin rosé"></div><div class="origin">Provence · Rosé</div><h3>Les Jours ensoleillés</h3><div class="desc">Frais et gourmand, tout en légèreté.</div><div class="buyrow"><span class="price">12,90 €</span><button class="add" data-name="Les Jours ensoleillés" aria-label="Ajouter Les Jours ensoleillés au panier">+</button></div></article>
+<article class="product"><div class="product-image"><img src="https://images.unsplash.com/photo-1516594798947-e65505dbb29d?auto=format&fit=crop&w=600&q=80" alt="Vin rouge de garde"></div><div class="origin">Bordeaux · Rouge</div><h3>La Belle Assemblée</h3><div class="desc">Structuré et élégant, pour les grandes tablées.</div><div class="buyrow"><span class="price">22,00 €</span><button class="add" data-name="La Belle Assemblée" aria-label="Ajouter La Belle Assemblée au panier">+</button></div></article>
+<article class="product"><div class="product-image"><img src="https://images.unsplash.com/photo-1594149433275-5d4c15d1e0a8?auto=format&fit=crop&w=600&q=80" alt="Vin effervescent"></div><div class="origin">Crémant · Bulles</div><h3>La Fête en bulles</h3><div class="desc">Fin et festif, pour célébrer simplement.</div><div class="buyrow"><span class="price">16,90 €</span><button class="add" data-name="La Fête en bulles" aria-label="Ajouter La Fête en bulles au panier">+</button></div></article>
+</div><p class="note">Sélection et tarifs illustratifs à remplacer par les références réelles de la cave.</p></section>
+<section class="section benefits" id="engagements"><div class="wrap"><div class="eyebrow">L’esprit de la maison</div><h2>Bien plus qu’une bouteille.</h2><div class="benefit-grid">
+<div><div class="benefit-icon">↗</div><h3>Livraison soignée</h3><p>Vos bouteilles voyagent avec soin, de notre cave lyonnaise jusqu’à votre porte, partout en France métropolitaine.</p></div>
+<div><div class="benefit-icon">✳</div><h3>Le conseil du caviste</h3><p>Un repas à préparer, un cadeau à trouver ? Nous vous aidons à choisir la bouteille qui fera plaisir.</p></div>
+<div><div class="benefit-icon">⌑</div><h3>Paiement sécurisé</h3><p>Une commande simple et un paiement sécurisé grâce à une solution adaptée à vos achats en ligne.</p></div>
+</div></div></section>
+<section class="contact wrap"><div class="eyebrow">Une question ?</div><h2>Trouvons votre prochaine bouteille.</h2><p>Notre métier, c’est aussi de vous faire découvrir des vins qui vous ressemblent.</p><a class="btn primary" href="mailto:bonjour@lacavedescanuts.fr">Parlons vin ↗</a></section>
+</main>
+<footer><div class="wrap"><div class="footer-grid"><div><div class="footer-brand">LA CAVE DES CANUTS</div><div class="tag">Caviste indépendant à Lyon</div></div><div><strong>Nous contacter</strong><br>Lyon, France<br><a class="textlink" href="mailto:bonjour@lacavedescanuts.fr">bonjour@lacavedescanuts.fr</a><br>04 00 00 00 00</div><div><strong>Informations</strong><br><a class="textlink" href="#engagements">Livraison & paiement</a><br><a class="textlink" href="#mentions">Mentions légales</a> · <a class="textlink" href="#confidentialite">Confidentialité</a><p class="legal">L’abus d’alcool est dangereux pour la santé, à consommer avec modération. Vente interdite aux mineurs.</p></div></div><div class="copyright">© 2026 La Cave des Canuts · Tous droits réservés.</div></div></footer>
+<script>
+
+async function loadWineCatalog() {
+  const container = document.querySelector('.products');
+  if (!container) return;
+
+  try {
+    const response = await fetch('/api/wines');
+    if (!response.ok) return;
+    const wines = await response.json();
+    if (!Array.isArray(wines) || wines.length === 0) return;
+
+    const euro = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' });
+    container.replaceChildren();
+
+    wines.forEach((wine) => {
+      const article = document.createElement('article');
+      article.className = 'product';
+
+      const imageWrap = document.createElement('div');
+      imageWrap.className = 'product-image';
+      const img = document.createElement('img');
+      img.src = wine.image_url || 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80';
+      img.alt = wine.name || 'Bouteille de vin';
+      imageWrap.appendChild(img);
+
+      if (wine.is_featured) {
+        const pill = document.createElement('span');
+        pill.className = 'pill';
+        pill.textContent = 'Coup de cœur';
+        imageWrap.appendChild(pill);
+      }
+
+      const origin = document.createElement('div');
+      origin.className = 'origin';
+      origin.textContent = [wine.appellation, wine.region, wine.wine_type].filter(Boolean).join(' · ');
+
+      const title = document.createElement('h3');
+      title.textContent = wine.name || 'Vin';
+
+      const description = document.createElement('div');
+      description.className = 'desc';
+      description.textContent = wine.description || wine.tasting_notes || '';
+
+      const buyRow = document.createElement('div');
+      buyRow.className = 'buyrow';
+      const price = document.createElement('span');
+      price.className = 'price';
+      price.textContent = euro.format((wine.price_cents || 0) / 100);
+
+      const add = document.createElement('button');
+      add.className = 'add';
+      add.type = 'button';
+      add.textContent = '+';
+      add.dataset.name = wine.name || 'Vin';
+      add.setAttribute('aria-label', 'Ajouter ' + (wine.name || 'ce vin') + ' au panier');
+      add.addEventListener('click', () => {
+        cartCount++;
+        document.getElementById('cart-count').textContent = cartCount;
+        add.textContent = '✓';
+        cartMessage.textContent = add.dataset.name + ' ajouté à la maquette du panier (' + cartCount + ' bouteille' + (cartCount > 1 ? 's' : '') + '). Aucune commande réelle n’est enregistrée.';
+        cartMessage.style.display = 'block';
+      });
+
+      buyRow.append(price, add);
+      article.append(imageWrap, origin, title, description, buyRow);
+      container.appendChild(article);
+    });
+
+    const count = document.querySelector('#selection .section-head .subtle');
+    if (count) count.textContent = wines.length + ' bouteilles à découvrir';
+    const note = document.querySelector('#selection .note');
+    if (note) note.textContent = 'Catalogue chargé depuis la cave.';
+  } catch (error) {
+    // Le catalogue de démonstration reste visible si l'API n'est pas disponible.
+    console.info('Catalogue Supabase indisponible : affichage de la sélection de démonstration.', error);
+  }
+}
+
+let cartCount=0;
+loadWineCatalog();
+const cartMessage=document.getElementById('cart-message');
+document.getElementById('cart-button').addEventListener('click',()=>{cartMessage.style.display=cartMessage.style.display==='block'?'none':'block';if(cartCount===0)cartMessage.textContent='Ton panier est prêt à accueillir tes découvertes. Ajoute une bouteille pour commencer.'});
+document.querySelectorAll('.add').forEach(button=>button.addEventListener('click',()=>{cartCount++;document.getElementById('cart-count').textContent=cartCount;button.textContent='✓';cartMessage.textContent=button.dataset.name+' ajouté à la maquette du panier ('+cartCount+' bouteille'+(cartCount>1?'s':'')+'). Aucune commande réelle n’est enregistrée.';cartMessage.style.display='block'}));
+</script>
+</body></html>
