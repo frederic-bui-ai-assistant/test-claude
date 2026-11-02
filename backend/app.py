@@ -3,25 +3,13 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 from flask import Flask, jsonify, render_template
-from supabase import Client, create_client
+
+from backend.catalog import get_public_wines
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(ROOT_DIR / ".env")
 
 app = Flask(__name__, template_folder="templates")
-_supabase: Client | None = None
-
-
-def get_supabase() -> Client:
-    """Create the Supabase client lazily so health checks do not need DB access."""
-    global _supabase
-    if _supabase is None:
-        url = os.getenv("SUPABASE_URL")
-        key = os.getenv("SUPABASE_PUBLISHABLE_KEY")
-        if not url or not key:
-            raise RuntimeError("La configuration Supabase est incomplète.")
-        _supabase = create_client(url, key)
-    return _supabase
 
 
 @app.get("/")
@@ -43,19 +31,7 @@ def health():
 @app.get("/api/wines")
 def list_wines():
     try:
-        response = (
-            get_supabase()
-            .table("wines")
-            .select(
-                "id,name,slug,description,vintage,wine_type,appellation,region,country,"
-                "grapes,volume_ml,alcohol_percentage,price_cents,compare_at_price_cents,"
-                "image_url,tasting_notes,food_pairings,is_featured,producers(name),categories(name)"
-            )
-            .eq("is_published", True)
-            .order("name")
-            .execute()
-        )
-        return jsonify(response.data)
+        return jsonify(get_public_wines())
     except RuntimeError as exc:
         app.logger.error("Configuration Supabase invalide: %s", exc)
         return jsonify({"error": str(exc)}), 503
