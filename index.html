@@ -49,7 +49,86 @@
 </main>
 <footer><div class="wrap"><div class="footer-grid"><div><div class="footer-brand">LA CAVE DES CANUTS</div><div class="tag">Caviste indépendant à Lyon</div></div><div><strong>Nous contacter</strong><br>Lyon, France<br><a class="textlink" href="mailto:bonjour@lacavedescanuts.fr">bonjour@lacavedescanuts.fr</a><br>04 00 00 00 00</div><div><strong>Informations</strong><br><a class="textlink" href="#engagements">Livraison & paiement</a><br><a class="textlink" href="#mentions">Mentions légales</a> · <a class="textlink" href="#confidentialite">Confidentialité</a><p class="legal">L’abus d’alcool est dangereux pour la santé, à consommer avec modération. Vente interdite aux mineurs.</p></div></div><div class="copyright">© 2026 La Cave des Canuts · Tous droits réservés.</div></div></footer>
 <script>
+
+async function loadWineCatalog() {
+  const container = document.querySelector('.products');
+  if (!container) return;
+
+  try {
+    const response = await fetch('/api/wines');
+    if (!response.ok) return;
+    const wines = await response.json();
+    if (!Array.isArray(wines) || wines.length === 0) return;
+
+    const euro = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' });
+    container.replaceChildren();
+
+    wines.forEach((wine) => {
+      const article = document.createElement('article');
+      article.className = 'product';
+
+      const imageWrap = document.createElement('div');
+      imageWrap.className = 'product-image';
+      const img = document.createElement('img');
+      img.src = wine.image_url || 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80';
+      img.alt = wine.name || 'Bouteille de vin';
+      imageWrap.appendChild(img);
+
+      if (wine.is_featured) {
+        const pill = document.createElement('span');
+        pill.className = 'pill';
+        pill.textContent = 'Coup de cœur';
+        imageWrap.appendChild(pill);
+      }
+
+      const origin = document.createElement('div');
+      origin.className = 'origin';
+      origin.textContent = [wine.appellation, wine.region, wine.wine_type].filter(Boolean).join(' · ');
+
+      const title = document.createElement('h3');
+      title.textContent = wine.name || 'Vin';
+
+      const description = document.createElement('div');
+      description.className = 'desc';
+      description.textContent = wine.description || wine.tasting_notes || '';
+
+      const buyRow = document.createElement('div');
+      buyRow.className = 'buyrow';
+      const price = document.createElement('span');
+      price.className = 'price';
+      price.textContent = euro.format((wine.price_cents || 0) / 100);
+
+      const add = document.createElement('button');
+      add.className = 'add';
+      add.type = 'button';
+      add.textContent = '+';
+      add.dataset.name = wine.name || 'Vin';
+      add.setAttribute('aria-label', 'Ajouter ' + (wine.name || 'ce vin') + ' au panier');
+      add.addEventListener('click', () => {
+        cartCount++;
+        document.getElementById('cart-count').textContent = cartCount;
+        add.textContent = '✓';
+        cartMessage.textContent = add.dataset.name + ' ajouté à la maquette du panier (' + cartCount + ' bouteille' + (cartCount > 1 ? 's' : '') + '). Aucune commande réelle n’est enregistrée.';
+        cartMessage.style.display = 'block';
+      });
+
+      buyRow.append(price, add);
+      article.append(imageWrap, origin, title, description, buyRow);
+      container.appendChild(article);
+    });
+
+    const count = document.querySelector('#selection .section-head .subtle');
+    if (count) count.textContent = wines.length + ' bouteilles à découvrir';
+    const note = document.querySelector('#selection .note');
+    if (note) note.textContent = 'Catalogue chargé depuis la cave.';
+  } catch (error) {
+    // Le catalogue de démonstration reste visible si l'API n'est pas disponible.
+    console.info('Catalogue Supabase indisponible : affichage de la sélection de démonstration.', error);
+  }
+}
+
 let cartCount=0;
+loadWineCatalog();
 const cartMessage=document.getElementById('cart-message');
 document.getElementById('cart-button').addEventListener('click',()=>{cartMessage.style.display=cartMessage.style.display==='block'?'none':'block';if(cartCount===0)cartMessage.textContent='Ton panier est prêt à accueillir tes découvertes. Ajoute une bouteille pour commencer.'});
 document.querySelectorAll('.add').forEach(button=>button.addEventListener('click',()=>{cartCount++;document.getElementById('cart-count').textContent=cartCount;button.textContent='✓';cartMessage.textContent=button.dataset.name+' ajouté à la maquette du panier ('+cartCount+' bouteille'+(cartCount>1?'s':'')+'). Aucune commande réelle n’est enregistrée.';cartMessage.style.display='block'}));
